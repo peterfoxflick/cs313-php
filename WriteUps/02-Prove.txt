@@ -1,0 +1,31 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://mysterious-sands-95461.herokuapp.com/
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/peterfoxflick/cs313-php
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+The index page is now functioning and the assignments page is working. There may need to be more assignments till it looks full.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+NA
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I learned how to add partial html files with php. This was used to build the header,
+footer, and nav bar on the assignments page. Now I can reuse them on multiple pages.
+
+6. What is the difference between an HTTP Get and Post? When should each be used?
+Get is to retrieve information from a webpage or server. Post is to send information to the servers.
+
+7. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+*E* - Shows creativity and excels above and beyond requirements
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+Not only did I meet requirements, but my webpage looks professional and uses PHP in a functional way that will allow future scalability.
