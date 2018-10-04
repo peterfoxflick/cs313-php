@@ -10,6 +10,14 @@ $continentLookup= array(
     "AN" => "Antartica"
 );
 
+function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+}
+
 /* Here we are goin to write our php code.*/
 $formData['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $formData['email'] = filter_input(INPUT_POST, 'email');
@@ -19,7 +27,8 @@ $formData['comments'] = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STR
 $formData['continents'] = $_POST['continent'];
 
 foreach($formData['continents'] as $key) {
-  array_push($formData['continent'],$continentLookup[$key]);
+  array_push($formData['continent'], $continentLookup[$key]);
+  debug_to_console( $continentLookup[$key] );
 }
 
 
@@ -51,7 +60,7 @@ function checkEmail($email){
           <p><strong>Comments:</strong></p>
           <p><?= $formData['comments'] ?></p>
           <p><strong>Continent</strong></p>
-          <p><?= json_encode($formData['continent']) ?></p>
+          <p><?= $formData['continent'] ?></p>
         </div>
       </div>
     </div>
