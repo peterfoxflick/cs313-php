@@ -28,7 +28,7 @@ $formData['continents'] = $_POST['continent'];
 
 foreach($formData['continents'] as $key) {
   array_push($formData['continent'], $continentLookup[$key]);
-  debug_to_console( $continentLookup[$key] );
+  debug_to_console( $formData['continent'] );
 }
 
 
