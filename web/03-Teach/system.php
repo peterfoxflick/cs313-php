@@ -16,7 +16,11 @@ $formData['email'] = filter_input(INPUT_POST, 'email');
 $formData['email'] = checkEmail($formData['email']);
 $formData['major'] = filter_input(INPUT_POST, 'major', FILTER_SANITIZE_STRING);
 $formData['comments'] = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
-$formData['continent'] = $continentLookup[$_POST['continent']];
+$formData['continents'] = $_POST['continent'];
+
+foreach($formData['continents'] as $key) {
+  array_push($formData['continent'],$continentLookup[$key]);
+}
 
 
 
