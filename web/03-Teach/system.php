@@ -1,11 +1,25 @@
 <?php
+
+$continentLookup= array(
+    "NA" => "North America",
+    "SA" => "South America",
+    "EU" => "Europe",
+    "AS" => "Asia",
+    "AU" => "Australia",
+    "AF" => "Africa",
+    "AN" => "Antartica"
+);
+
 /* Here we are goin to write our php code.*/
 $formData['name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $formData['email'] = filter_input(INPUT_POST, 'email');
 $formData['email'] = checkEmail($formData['email']);
 $formData['major'] = filter_input(INPUT_POST, 'major', FILTER_SANITIZE_STRING);
 $formData['comments'] = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
-$formData['continent'] =$_POST['continent'];
+$formData['continent'] = $continentLookup[$_POST['continent']];
+
+
+
 
 function checkEmail($email){
   $sanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);

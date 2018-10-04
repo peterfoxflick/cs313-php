@@ -26,7 +26,18 @@
         </div>
 
         <div class="form-group">
-          <div class="form-check">
+          <?php
+          $major = array("Computer Science"=>"CS", "Web Design and Development"=>"WDD",
+                         "Computer Information Technology"=>"CIT", "Computer Engineering"=>"CE");
+
+          foreach($major as $name => $abbr) {
+              echo "<div class='form-check'>
+                     <input type='radio' name='major' id='major-{$abbr}' class='form-check-input' value='{$name}'>
+                     <label for='major-{$abbr}' class='form-check-label'>$name</label>
+                    </div>";
+          }
+                          ?>
+          <!-- <div class="form-check">
             <input type="radio" name="major" id="major-cs" class="form-check-input" value="Computer Science">
             <label for="major-cs" class="form-check-label">Computer Science</label>
           </div>
@@ -41,37 +52,37 @@
           <div class="form-check">
             <input type="radio" name="major" id="major-ce" class="form-check-input" value="Computer Engineering">
             <label for="major-ce" class="form-check-label">Computer Engineering</label>
-          </div>
+           </div> -->
         </div>
 
 
         <div class="form-group">
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-NA" class="form-check-input" value="North America">
+            <input type="checkbox" name="continent[]" id="continent-NA" class="form-check-input" value="NA">
             <label for="continent-NA" class="form-check-label">North America</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-SA" class="form-check-input" value="South America">
+            <input type="checkbox" name="continent[]" id="continent-SA" class="form-check-input" value="SA">
             <label for="continent-SA" class="form-check-label">South America</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-Eu" class="form-check-input" value="Europe">
+            <input type="checkbox" name="continent[]" id="continent-Eu" class="form-check-input" value="EU">
             <label for="continent-Eu" class="form-check-label">Europe</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-As" class="form-check-input" value="Asia">
+            <input type="checkbox" name="continent[]" id="continent-As" class="form-check-input" value="AS">
             <label for="continent-As" class="form-check-label">Asia</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-Au" class="form-check-input" value="Australia">
+            <input type="checkbox" name="continent[]" id="continent-Au" class="form-check-input" value="AU">
             <label for="continent-Au" class="form-check-label">Australia</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-Af" class="form-check-input" value="Africa">
+            <input type="checkbox" name="continent[]" id="continent-Af" class="form-check-input" value="AF">
             <label for="continent-Af" class="form-check-label">Africa</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="continent[]" id="continent-An" class="form-check-input" value="Antartica">
+            <input type="checkbox" name="continent[]" id="continent-An" class="form-check-input" value="AN">
             <label for="continent-An" class="form-check-label">Antartica</label>
           </div>
         </div>
@@ -97,15 +108,5 @@
  instead, create a PHP array (or something similar...) that contains each of the desired majors and its
  abbreviation. Then, loop over this array to generate radio buttons for the different majors. -->
  <!--
- <?php
- $major = array("Computer Science"=>"CS", "Web Design and Development"=>"WDD",
-                "Computer Information Technology"=>"CIT", "Computer Engineering"=>"CE");
 
- foreach($major as $name => $abbr) {
-     echo "<div class='form-check'>
-            <input type='radio' name='major' id='major-{$abbr}' class='form-check-input' value='{$name}'>
-            <label for='major-{$abbr}' class='form-check-label'>$name</label>
-           </div>";
- }
-                 ?>
   -->
