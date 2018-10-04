@@ -37,16 +37,25 @@ function checkEmail($email){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Display</title>
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   </head>
   <body>
-    <h1>Name: <?= $formData['name'] ?></h1>
-    <p>Email: <?= $formData['email'] ?></p>
-    <p>Major: <?= $formData['major'] ?></p>
-    <p><strong>Comments:</strong></p>
-    <p><?= $formData['comments'] ?></p>
-    <p><strong>Continent</strong></p>
-    <p><?= json_encode($formData['continent']) ?></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1>Name: <?= $formData['name'] ?></h1>
+          <p>Email: <?= $formData['email'] ?></p>
+          <p>Major: <?= $formData['major'] ?></p>
+          <p><strong>Comments:</strong></p>
+          <p><?= $formData['comments'] ?></p>
+          <p><strong>Continent</strong></p>
+          <p><?= json_encode($formData['continent']) ?></p>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
 
