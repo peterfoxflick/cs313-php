@@ -2,63 +2,43 @@
 
 session_start();
 
-class Item
-{
-    public $id;
-    public $name;
-    public $desc;
-    public $price;
-}
-
-$newItem = new Item();
-  $newItem->id = 001;
-  $newItem->name = 'Telephoto Camera';
-  $newItem->desc = 'This camera is perfect for getting far away shots.';
-  $newItem->price = 499.99;
-
-$items = array($newItem);
-
-$newItem1 = new Item();
-  $newItem1->id = 002;
-  $newItem1->name = 'Pocket Camera';
-  $newItem1->desc = 'This camera is great and portable';
-  $newItem1->price = 299.99;
-
-array_push($items, $newItem1);
-
-$newItem2 = new Item();
-  $newItem2->id = 003;
-  $newItem2->name = 'Vintage Camera';
-  $newItem2->desc = 'Throw back to this camera flashback.';
-  $newItem2->price = 399.99;
-
-array_push($items, $newItem2);
 
 // Removing item
 if ( isset($_GET["delete"]) ) {
  $id = $_GET["delete"];
 
- if (isset($_SESSION["cart"][$id][$qty])) {
-   if ($_SESSION["cart"][$id][$qty] > 1) {
-     $_SESSION["cart"][$id][$qty] = $_SESSION["cart"][$id][$qty] - 1;
-   } else {
+ if (isset($_SESSION["cart"][$id])) {
+   if ($_SESSION["cart"][$id][1] == 1) {
      unset($_SESSION["cart"][$id]);
+
+   } else {
+     $_SESSION["cart"][$id][1] = $_SESSION["cart"][$id][1] - 1;
+
    }
  }
 }
 
-//Adding a new item
+// Removing item
+if ( isset($_GET["clear"]) ) {
+ if (isset($_SESSION["cart"])) {
+     unset($_SESSION["cart"]);
 
-if ( isset($_GET["add"]) ) {
-  $id = $_GET["add"];
-
-  if (isset($_SESSION["cart"][$id][$qty])) {
-    $_SESSION["cart"][$id][$qty] = $_SESSION["cart"][$id][$qty] + 1;
-  } else {
-    $_SESSION["cart"][$id][$qty] = 1;
-  }
+ }
 }
 
+
+//Adding a new item
+if ( isset($_GET["add"]) ) {
+  $id = $_GET["add"];
+  if (isset($_SESSION["cart"][$id])) {
+    $_SESSION["cart"][$id][1] = $_SESSION["cart"][$id][1] + 1;
+  } else {
+    $_SESSION["cart"][$id][0] = $id;
+    $_SESSION["cart"][$id][1] = 1;
+    $_SESSION["cart"][$id][2] = $items[$id]->name;
+    $_SESSION["cart"][$id][3] = (float)$items[$id]->price;
+  }
+}
 
 
  ?>
@@ -68,35 +48,49 @@ if ( isset($_GET["add"]) ) {
    <head>
      <meta charset="utf-8">
      <title>Cart</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <script src="https://use.fontawesome.com/01ce896b41.js"></script>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
    </head>
    <body>
+     <div class="container">
 
-     <table class="table">
-       <thead>
-         <tr>
-           <th scope="col">#</th>
-           <th scope="col">Name</th>
-           <th scope="col">Price</th>
-           <th scope="col">Quantity</th>
-         </tr>
-       </thead>
-       <tbody>
-         <?php
-          if ( isset($_SESSION["cart"]) ) {
-            foreach($_SESSION["cart"] as $item){
-              echo "<tr>
-                <th scope='row'>{$item->id}</th>
-                <td>{$items[$id][$name]}</td>
-                <td></td>
-                <td></td>
-              </tr>";
+       <a href='index.php' class='btn btn-primary'>Back to Shopping</a>
+       <a href='?clear' class='btn btn-primary'>Clear Cart</a>
+       <a href='checkout.php' class='btn btn-primary'>Checkout</a>
+
+       <table class="table">
+         <thead>
+           <tr>
+             <th scope="col">#</th>
+             <th scope="col">Name</th>
+             <th scope="col">Price</th>
+             <th scope="col">Quantity</th>
+             <th scope="col">Total</th>
+           </tr>
+         </thead>
+         <tbody>
+           <?php
+            if ( isset($_SESSION["cart"]) ) {
+              foreach($_SESSION["cart"] as $item){
+                $total = $item[3] * $item[1];
+                echo "<tr>
+                  <th scope='row'>{$item[0]}</th>
+                  <td>{$item[2]}</td>
+                  <td>{$item[3]}</td>
+                  <td><a href='?delete={$item[0]}'><i class='fas fa-minus-circle'></i></a>{$item[1]}<a href='?add={$item[0]}'><i class='fas fa-plus-circle'></i></a></td>
+                  <td>{$total}</td>
+                </tr>";
+              }
             }
-          }
 
-          ?>
-        </tbody>
-      </table>
+            ?>
+          </tbody>
+        </table>
 
+    </div>
 
 
    </body>
