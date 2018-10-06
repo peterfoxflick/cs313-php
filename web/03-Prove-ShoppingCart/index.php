@@ -86,15 +86,15 @@ array_push($items, $newItem2);
   <body>
     <?php
 
-    foreach ($item as $items) {
-        echo "<div class='card' style='width: 18rem;'>
-          <div class='card-body'>
-            <h5 class='card-title'>{$name}</h5>
-            <p class='card-text'>{$desc}</p>
-            <a href='?add={$id}' class='btn btn-primary'>Add to Cart</a>
-          </div>
-        </div>"
-    }
+    // foreach ($items as $item) {
+    //     echo "<div class='card' style='width: 18rem;'>
+    //       <div class='card-body'>
+    //         <h5 class='card-title'>{$item->name}</h5>
+    //         <p class='card-text'>{$item->$desc}</p>
+    //         <a href='?add={$item->$id}' class='btn btn-primary'>Add to Cart</a>
+    //       </div>
+    //     </div>";
+    // }
 
 
      ?>
