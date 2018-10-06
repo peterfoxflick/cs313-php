@@ -51,7 +51,7 @@ function checkEmail($email){
 
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="margin-top: 20px;">
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <h1>Name: <?= $formData['name'] ?></h1>

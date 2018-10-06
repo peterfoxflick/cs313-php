@@ -2,8 +2,6 @@
 // The Session
 session_start();
 
-
-
 // The products to sell
 class Item
 {
@@ -78,53 +76,43 @@ if ( isset($_GET['reset']) ) {
 }
 
 
-
-
-
-
-
-
-
-
-
 ?>
-
 
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Shopping Cart</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <title>Shopping Cart</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  </head>
-  <body>
-    <div class="container">
-      <a href='cart.php' class='btn btn-primary'>Cart</a>
+</head>
+<body>
+  <div class="container" style="margin-top: 20px;">
+    <div class="row">
+      <div class="col">
 
-      <?php
+        <a href='cart.php' class='btn btn-primary'>Cart</a>
 
-      foreach ($items as $item) {
-          echo "<div class='card' style='width: 18rem;'>
-            <div class='card-body'>
-              <h5 class='card-title'>{$item->name}</h5>
-              <p class='card-text'>{$item->desc}</p>
-              <a href='?add={$item->id}' class='btn btn-primary'>Add to Cart</a>
-            </div>
+        <?php
+
+        foreach ($items as $item) {
+          echo "<div class='card' style='width: 300px;margin:15px'>
+          <div class='card-body'>
+          <h5 class='card-title'>{$item->name}</h5>
+          <p class='card-text'>{$item->desc}</p>
+          <a href='?add={$item->id}' class='btn btn-primary'>Add to Cart</a>
+          </div>
           </div>";
-      }
+        }
 
 
-       ?>
+        ?>
+      </div>
     </div>
-
-
-
-
-
-  </body>
+  </div>
+</body>
 </html>
 
 <!--
