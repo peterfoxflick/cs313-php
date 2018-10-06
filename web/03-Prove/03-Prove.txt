@@ -1,0 +1,31 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://mysterious-sands-95461.herokuapp.com/03-Prove/index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/peterfoxflick/cs313-php/tree/master/web/03-Prove
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+The entire application is functional. Just keep clicking buttons to go through all the pages.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+NA
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I learned that arrays are a pain, but you can also assign them by key values, simply by setting the key.
+
+6. List one strength and one limitation of using cookies.
+Cookies are great for short things, but they are stored of the users computer and thus vulnerable to being edited.
+
+7. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+
+*E*
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+Not only do all the requirements work but the assignment looks great and has a add button from the cart page. 
