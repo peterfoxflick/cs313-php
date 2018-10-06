@@ -15,6 +15,10 @@
           <a href="./02-Teach/index.html" class="list-group-item list-group-item-action">02 Teach</a>
           <a href="./03-Teach/index.php" class="list-group-item list-group-item-action">03 Teach</a>
         </div>
+        <h1>Proves</h1>
+        <div class="list-group">
+          <a href="./03-Prove/index.php" class="list-group-item list-group-item-action">03 Prove</a>
+        </div>
       </div>
     </div>
   </div>
