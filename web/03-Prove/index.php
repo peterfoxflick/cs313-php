@@ -1,4 +1,10 @@
 <?php
+// The Session
+session_start();
+
+
+
+// The products to sell
 class Item
 {
     public $id;
@@ -32,6 +38,38 @@ $newItem = new Item();
 array_push($items, $newItem);
 
 
+
+//Adding a new item
+
+if ( isset($_GET["add"]) ) {
+  $id = $_GET["add"];
+
+  if (isset($_SESSION["cart"][$id][$qty])) {
+    $_SESSION["cart"][$id][$qty] = $_SESSION["cart"][$id][$qty] + 1;
+  } else {
+    $_SESSION["cart"][$id][$qty] = 1;
+  }
+}
+
+
+
+//Reset
+if ( isset($_GET['reset']) ) {
+  if ($_GET["reset"] == 'true') {
+    unset($_SESSION["cart"]);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -53,7 +91,7 @@ array_push($items, $newItem);
           <div class='card-body'>
             <h5 class='card-title'>{$name}</h5>
             <p class='card-text'>{$desc}</p>
-            <a href='#' class='btn btn-primary'>Add to Cart</a>
+            <a href='?add={$id}' class='btn btn-primary'>Add to Cart</a>
           </div>
         </div>"
     }
