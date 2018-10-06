@@ -41,24 +41,24 @@ array_push($items, $newItem2);
 
 //Adding a new item
 
-if ( isset($_GET["add"]) ) {
-  $id = $_GET["add"];
-
-  if (isset($_SESSION["cart"][$id][$qty])) {
-    $_SESSION["cart"][$id][$qty] = $_SESSION["cart"][$id][$qty] + 1;
-  } else {
-    $_SESSION["cart"][$id][$qty] = 1;
-  }
-}
-
-
-
-//Reset
-if ( isset($_GET['reset']) ) {
-  if ($_GET["reset"] == 'true') {
-    unset($_SESSION["cart"]);
-    }
-}
+// if ( isset($_GET["add"]) ) {
+//   $id = $_GET["add"];
+//
+//   if (isset($_SESSION["cart"][$id][$qty])) {
+//     $_SESSION["cart"][$id][$qty] = $_SESSION["cart"][$id][$qty] + 1;
+//   } else {
+//     $_SESSION["cart"][$id][$qty] = 1;
+//   }
+// }
+//
+//
+//
+// //Reset
+// if ( isset($_GET['reset']) ) {
+//   if ($_GET["reset"] == 'true') {
+//     unset($_SESSION["cart"]);
+//     }
+// }
 
 
 
