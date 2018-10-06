@@ -21,21 +21,21 @@ $newItem = new Item();
 
 $items = array($newItem);
 
-$newItem = new Item();
-  $newItem->id = 002;
-  $newItem->name = 'Pocket Camera';
-  $newItem->desc = 'This camera is great and portable';
-  $newItem->price = 299.99;
+$newItem1 = new Item();
+  $newItem1->id = 002;
+  $newItem1->name = 'Pocket Camera';
+  $newItem1->desc = 'This camera is great and portable';
+  $newItem1->price = 299.99;
 
-array_push($items, $newItem);
+array_push($items, $newItem1);
 
-$newItem = new Item();
-  $newItem->id = 003;
-  $newItem->name = 'Vintage Camera';
-  $newItem->desc = 'Throw back to this camera flashback.';
-  $newItem->price = 399.99;
+$newItem2 = new Item();
+  $newItem2->id = 003;
+  $newItem2->name = 'Vintage Camera';
+  $newItem2->desc = 'Throw back to this camera flashback.';
+  $newItem2->price = 399.99;
 
-array_push($items, $newItem);
+array_push($items, $newItem2);
 
 
 
@@ -89,11 +89,11 @@ if ( isset($_GET['reset']) ) {
     foreach ($items as $item) {
         echo "<div class='card' style='width: 18rem;'>
           <div class='card-body'>
-            <h5 class='card-title'>{$name}</h5>
-            <p class='card-text'>{$desc}</p>
-            <a href='?add={$id}' class='btn btn-primary'>Add to Cart</a>
+            <h5 class='card-title'>{$item->name}</h5>
+            <p class='card-text'>{$item->desc}</p>
+            <a href='?add={$item->id}' class='btn btn-primary'>Add to Cart</a>
           </div>
-        </div>"
+        </div>";
     }
 
 
