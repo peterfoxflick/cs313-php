@@ -14,7 +14,7 @@
   password
 */
   CREATE TABLE "user" (
-   id         INT                    NOT NULL,
+   id         SERIAL                 NOT NULL,
    user_name  VARCHAR(20)            NOT NULL,
    password   VARCHAR(20)            NOT NULL,
    PRIMARY KEY( id )
@@ -34,7 +34,7 @@ INSERT INTO "user" VALUES (003, 'pointdext', 'LetMeIn');
   order
 */
   CREATE TABLE "content" (
-   id              INT                 NOT NULL,
+   id              SERIAL              NOT NULL,
    name            VARCHAR(40)         NOT NULL,
    data            TEXT                NOT NULL,
    course_id       INT                 NOT NULL,
@@ -54,7 +54,7 @@ INSERT INTO "content" VALUES (3, 'Planting', 'Place the seed into the dirt for i
 */
 
 CREATE TABLE "course" (
- id    INT                 NOT NULL,
+ id    SERIAL              NOT NULL,
  name  VARCHAR(40)         NOT NULL,
  PRIMARY KEY( id )
 );
@@ -70,7 +70,7 @@ INSERT INTO "course" VALUES (3, 'Arduinos for Beginners');
   content_id
 */
 CREATE TABLE "complete" (
-   id               INT       NOT NULL,
+   id               SERIAL    NOT NULL,
    user_id          INT       NOT NULL,
    content_id       INT       NOT NULL,
    PRIMARY KEY( user_id )
