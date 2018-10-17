@@ -53,8 +53,8 @@ catch (PDOException $ex)
   }
 
   $scriptures = get_all_scriptures();
-  var_dump($scriptures);
-  exit;
+  //var_dump($scriptures);
+  //exit;
 ?>
 
 <!DOCTYPE html>
