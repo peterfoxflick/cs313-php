@@ -33,8 +33,8 @@ function get_scripture($scriptureID) {
 }
 
 $scripture = get_scripture($scriptureID);
-var_dump($scripture);
-exit;
+//var_dump($scripture);
+//exit;
 ?>
 
 <!DOCTYPE html>
