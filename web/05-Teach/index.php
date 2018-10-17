@@ -74,7 +74,7 @@ catch (PDOException $ex)
         <h1 class="display-3">Scripture Resources</h1>
         <?php foreach($scriptures as $scripture): ?>
           <p>
-            <strong><a href="/scripture.php?id={$scripture['id']}"><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
+            <strong><a href="./scripture.php?id={$scripture['id']}"><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
             <?= $scripture['content']; ?>"
           </p>
         <?php endforeach; ?>
