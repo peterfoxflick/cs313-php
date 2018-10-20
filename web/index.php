@@ -31,6 +31,7 @@
             <button onclick="toggleDesc()" class="list-group-item list-group-item-action">About Me</button>
               <p id="toggleDes">I'm currently a computer science major. My interests include web development, videography, learning new things, and snorkling</p>
             <a href="assignments.php" class="list-group-item list-group-item-action">Assignments</a>
+            <a href="LMS/index.php" class="list-group-item list-group-item-action">LMS Project</a>
           </div>
         </div>
       </div>
