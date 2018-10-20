@@ -34,7 +34,8 @@ $content_id = $_GET['id'];
   }
 
   $text = get_all_content($content_id);
-
+  var_dump($text);
+  exit;
 ?>
 
 
