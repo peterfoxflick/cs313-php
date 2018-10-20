@@ -1,6 +1,6 @@
 <?php
 
-$course_id = (int)filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+$course_id = $_GET['id'];
 
 
   function dbConnect(){
