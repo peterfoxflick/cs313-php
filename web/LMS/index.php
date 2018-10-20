@@ -27,10 +27,11 @@
     $stmt->closeCursor();
     return $data;
   }
+
   $courses = get_all_courses();
 
-  var_dump($courses);
-  exit;
+  // var_dump($courses);
+  // exit;
 ?>
 
 
@@ -42,7 +43,7 @@
   <div class="col">
     <div class="row">
       <ul class="list-group">
-        <?php foreach($course as $courses): ?>
+        <?php foreach($courses as $course): ?>
            <li class="list-group-item"><?= $course['name']; ?></li>
          <?php endforeach; ?>
       </ul>
