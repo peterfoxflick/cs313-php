@@ -43,6 +43,7 @@ $course_id = $_GET['id'];
 <div class="container">
   <div class="col">
     <div class="row">
+      <h1>Course Name</h1>
       <ul class="list-group">
         <?php foreach($contents as $content): ?>
            <li class="list-group-item"><?= $content['name']; ?></li>
