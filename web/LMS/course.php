@@ -23,16 +23,6 @@ $course_id = $_GET['id'];
     }
   }
   function get_all_content($id) {
-  //   $db = dbConnect();
-  //
-  //   $stmt = $db->prepare('SELECT * FROM content WHERE course_id=:course_id');
-  // //  $stmt->bindValue(':course_id', $course_id, PDO::PARAM_INT);
-  //   $stmt->execute();
-  //   $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  //
-  //   $stmt->closeCursor();
-  //   return $data;
-
 
     $db = dbConnect();
     $sql = "SELECT * FROM content WHERE course_id={$id}";
@@ -44,8 +34,6 @@ $course_id = $_GET['id'];
   }
 
   $contents = get_all_content($course_id);
-  var_dump($contents);
-exit; 
 
 ?>
 
