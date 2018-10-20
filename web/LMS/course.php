@@ -24,8 +24,7 @@ $course_id = $_GET['id'];
   }
   function get_all_content() {
     $db = dbConnect();
-    $sql = "SELECT * FROM content WHERE course_id=:course_id";
-    $stmt->bindValue(':course_id', $course_id, PDO::PARAM_INT);
+    $sql = "SELECT * FROM content WHERE course_id={$id}";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
@@ -36,7 +35,6 @@ $course_id = $_GET['id'];
   $contents = get_all_content();
 
 ?>
-
 
 
 <?php include './partials/header.php';?>
