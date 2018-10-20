@@ -45,7 +45,7 @@ $course_id = $_GET['id'];
 
   $contents = get_all_content($course_id);
   var_dump($contents);
-exit;
+exit; 
 
 ?>
 
