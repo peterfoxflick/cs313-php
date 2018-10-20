@@ -22,18 +22,20 @@ $content_id = $_GET['id'];
       exit;
     }
   }
-  function get_all_content($id) {
+  function get_data($id) {
 
     $db = dbConnect();
-    $sql = "SELECT data FROM content WHERE id={$id}";
+    $sql = "SELECT * FROM content WHERE id={$id}";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
     $stmt->closeCursor();
-    return $data[0]["data"];
+    return $data[0];
   }
 
-  $text = get_all_content($content_id);
+  $data = get_data($content_id);
+  $text = $data["data"];
+  $name = $data["name"];
 
 ?>
 
@@ -42,6 +44,9 @@ $content_id = $_GET['id'];
 
 <div class="container">
   <div class="col">
+    <div class="row">
+      <h1><?= $name ?></h1>
+    </div>
     <div class="row">
       <ul class="list-group">
         <?= $text ?>
