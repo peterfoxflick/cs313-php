@@ -39,6 +39,9 @@
 <div class="container">
   <div class="col">
     <div class="row">
+      <h1>Courses to pick from</h1>
+    </div>
+    <div class="row">
       <ul class="list-group">
         <?php foreach($courses as $course): ?>
           <?php echo "<a href='./course.php?id={$course['id']}' class='list-group-item list-group-item-action'>{$course['name']}</a>" ?>
