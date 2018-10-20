@@ -40,6 +40,7 @@
   <div class="col">
     <div class="row">
       <h1>Courses to pick from</h1>
+      <a class="btn btn-primary float-right" href="./user.php?id=1" role="button">My Progress</a>
     </div>
     <div class="row">
       <ul class="list-group">
