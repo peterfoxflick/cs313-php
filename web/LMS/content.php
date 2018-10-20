@@ -30,7 +30,7 @@ $content_id = $_GET['id'];
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
     $stmt->closeCursor();
-    return $data["data"];
+    return $data[0]["data"];
   }
 
   $text = get_all_content($content_id);
