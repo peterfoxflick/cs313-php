@@ -55,6 +55,8 @@ $course_id = $_GET['id'];
   <div class="col">
     <div class="row">
       <h1><?php echo $name ?></h1>
+    </div>
+    <div class="row">
       <ul class="list-group">
         <?php foreach($contents as $content): ?>
           <?php echo "<a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a>" ?>
