@@ -35,6 +35,8 @@ $course_id = $_GET['id'];
   }
 
   $contents = get_all_content();
+  var_dump($contents);
+exit;
 
 ?>
 
