@@ -22,8 +22,8 @@ $course_id = $_GET['id'];
       exit;
     }
   }
-  function get_all_content($id) {
 
+  function get_all_content($id) {
     $db = dbConnect();
     $sql = "SELECT * FROM content WHERE course_id={$id}";
     $stmt = $db->prepare($sql);
@@ -33,7 +33,18 @@ $course_id = $_GET['id'];
     return $data;
   }
 
+  function get_course_data($id) {
+    $db = dbConnect();
+    $sql = "SELECT name FROM course WHERE id={$id}";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+    $stmt->closeCursor();
+    return $data[0]["name"];
+  }
+
   $contents = get_all_content($course_id);
+  $name = get_course_data($course_id);
 
 ?>
 
@@ -43,7 +54,7 @@ $course_id = $_GET['id'];
 <div class="container">
   <div class="col">
     <div class="row">
-      <h1>Course Name</h1>
+      <h1><?php echo $name ?></h1>
       <ul class="list-group">
         <?php foreach($contents as $content): ?>
            <li class="list-group-item"><?= $content['name']; ?></li>
