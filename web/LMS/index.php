@@ -28,6 +28,9 @@
     return $data;
   }
   $courses = get_all_courses();
+
+  var_dump($courses);
+  exit;
 ?>
 
 
@@ -46,5 +49,5 @@
      </div>
    </div>
  </div>
- 
+
 <?php include './partials/footer.php';?>
