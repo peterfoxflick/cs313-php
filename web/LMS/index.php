@@ -39,11 +39,13 @@
 <div class="container">
   <div class="col">
     <div class="row">
-      <h1>Courses to pick from</h1>
-    </div>
-    <div class="row">
       <a class="btn btn-primary" href="./user.php?id=2" role="button">My Progress</a>
     </div>
+    
+    <div class="row">
+      <h1>Courses to pick from</h1>
+    </div>
+
     <div class="row">
       <ul class="list-group">
         <?php foreach($courses as $course): ?>
