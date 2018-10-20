@@ -1,6 +1,6 @@
 <?php
 
-  $course_id = $_GET['id'];
+  $user_id = $_GET['id'];
 
   function dbConnect(){
     try {
@@ -41,7 +41,7 @@
     return $data[0]["name"];
   }
 
-  $progress = get_user_progress();
+  $progress = get_user_progress($user_id);
 
 ?>
 
