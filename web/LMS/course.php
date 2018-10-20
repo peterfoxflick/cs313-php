@@ -24,7 +24,7 @@ $course_id = $_GET['id'];
   }
   function get_all_content() {
     $db = dbConnect();
-    $sql = "SELECT * FROM content WHERE course_id={$id}";
+    $sql = "SELECT * FROM content WHERE course_id={$course_id}";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
