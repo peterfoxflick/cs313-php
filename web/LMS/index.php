@@ -66,7 +66,7 @@
 
  <script>
  function searchBtn() {
-   var url = "./search.php?term=" + document.getElementById("searchTerm").getValue();
+   var url = "./search.php?term=" + document.getElementById("searchTerm").value;
    location.href = url;
  }
  </script>
