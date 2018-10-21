@@ -54,7 +54,7 @@ $term = $_GET['term'];
     </div>
 
     <div class="row">
-      <h1>Courses to pick from</h1>
+      <h1>Courses matching "<?php echo $term ?>"</h1>
     </div>
 
     <div class="row">
