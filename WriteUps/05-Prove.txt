@@ -1,0 +1,32 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://mysterious-sands-95461.herokuapp.com/LMS/index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/peterfoxflick/cs313-php
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+The site now shows courses, allows for a basic search of courses (try "Bees" or "Arduino"), and shows content pages.
+The user can check progress (right now it just checks for user_2) of completed content pages.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+The search is extremely basic and I would like for it to do a better job of finding courses.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+Quite frankly I find it really cool that all I had to do was create one webpage for every content page. Its quite cool.
+
+6. Why should you create a separate user account for your application to access the database?
+It helps with security. The admin can do anything, whereas a user can be limited. If someone did inject sql into a query then it would be acting as admin and could shut you out. If you use a separate account then you could at least go in as the admin and block that user.
+
+7. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+
+*E*
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+Not only is the project showing everything, its quite a complicated project and has multiple pages that work with each other. It also looks okay. 
