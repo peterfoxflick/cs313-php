@@ -69,5 +69,6 @@
    var url = "./search.php?term=" + document.getElementById("searchTerm").getValue();
    location.href = url;
  }
+ </script>
 
 <?php include './partials/footer.php';?>
