@@ -1,5 +1,15 @@
 <?php
 
+$_POST['chapter'];
+
+if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) && isset($_POST['content'])) {
+  $book = filter_var($_POST['book'], FILTER_SANATIZE_STRING);
+  $chapter = filter_var($_POST['chapter'], FILTER_SANATIZE_STRING);
+  $verse = filter_var($_POST['verse'], FILTER_SANATIZE_STRING);
+  $contnet = filter_var($_POST['contnet'], FILTER_SANATIZE_STRING);
+  add_scripture($book, $chapter, $verse, $content);
+}
+
 function dbConnect(){
     try {
         $url = getenv('DATABASE_URL');
@@ -70,7 +80,7 @@ function add_scripture($book, $chapter, $verse, $contnet) {
   $new_id = $row['0']
 
 
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +113,7 @@ function add_scripture($book, $chapter, $verse, $contnet) {
 
 
 
-<form action="thoushaltnotaddnortakeaway.php">
+<form action="teamActivty.php" method="POST">
   <input type="text" id="book" name="book">
   <input type="text" id="chapter" name="chapter">
   <input type="text" id="verse" name="verse">
