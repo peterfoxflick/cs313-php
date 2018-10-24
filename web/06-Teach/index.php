@@ -123,7 +123,7 @@ function add_scripture($book, $chapter, $verse, $content) {
 
     <?php foreach($topics as $topic): ?>
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" value="<?= $topic['id'] ?>" id="<?= checkbox-$topic['id'] ?>">
+        <input type="checkbox" class="custom-control-input" name="topics[]" value="<?= $topic['id'] ?>" id="<?= checkbox-$topic['id'] ?>">
         <label class="custom-control-label" for="<?= checkbox-$topic['id'] ?>"><?= $topic['name']; ?></label>
       </div>
     <?php endforeach; ?>
