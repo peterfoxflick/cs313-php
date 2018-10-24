@@ -120,12 +120,13 @@ function add_scripture($book, $chapter, $verse, $content) {
   <input type="submit" id="submit" name="submit" value="Submit">
 
 
-  <?php foreach($topics as $topic): ?>
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" value="<?= $topic['id'] ?>" id="<?= 'checkbox-$topic["id"]' ?>">
-      <label class="custom-control-label" for="<?= 'checkbox-$topic["id"]' ?>"><?= $topic['name']; ?></label>
-    </div>
-  <?php endforeach; ?>
+
+    <?php foreach($topics as $topic): ?>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" value="<?= $topic['id'] ?>" id="<?= checkbox-$topic['id'] ?>">
+        <label class="custom-control-label" for="<?= checkbox-$topic['id'] ?>"><?= $topic['name']; ?></label>
+      </div>
+    <?php endforeach; ?>
 
 
 </form>
