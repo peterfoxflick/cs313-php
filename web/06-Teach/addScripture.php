@@ -1,10 +1,10 @@
 <?php
 
 if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) && isset($_POST['content'])) {
-  $book = filter_var($_POST['book'], FILTER_SANATIZE_STRING);
-  $chapter = filter_var($_POST['chapter'], FILTER_SANATIZE_STRING);
-  $verse = filter_var($_POST['verse'], FILTER_SANATIZE_STRING);
-  $contnet = filter_var($_POST['contnet'], FILTER_SANATIZE_STRING);
+  $book = filter_var($_POST['book'], FILTER_SANITIZE_STRING);
+  $chapter = filter_var($_POST['chapter'], FILTER_SANITIZE_NUMBER_INT);
+  $verse = filter_var($_POST['verse'], FILTER_SANITIZE_NUMBER_INT);
+  $contnet = filter_var($_POST['contnet'], FILTER_SANITIZE_STRING);
   $added = add_scripture($book, $chapter, $verse, $content);
   if($added == 1) {
     echo "<script>window.alert('did add to db')</script>";
@@ -66,11 +66,11 @@ function add_scripture($book, $chapter, $verse, $contnet) {
   $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content) RETURNING id";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":book", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":chapter", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":verse", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":content", $book, PDO::PARAM_STR);
+  $stmt->bindValue(":chapter", $chapter, PDO::PARAM_INT);
+  $stmt->bindValue(":verse", $verse, PDO::PARAM_INT);
+  $stmt->bindValue(":content", $contnet, PDO::PARAM_STR);
   $returnItem = $stmt->execute();
-  var_dump($stmt);
+  var_dump($returnItem);
   exit;
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
