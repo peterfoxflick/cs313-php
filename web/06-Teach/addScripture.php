@@ -7,8 +7,11 @@ if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) &
   $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
   $added = add_scripture($book, $chapter, $verse, $content);
 
+
   $topics = filter_var($_POST['topics'], FILTER_SANITIZE_NUMBER_INT);
 
+  var_dump($topics);
+  
   foreach( $topics as $topic) {
     addTopic($topic);
   }
@@ -84,7 +87,6 @@ function add_scripture($book, $chapter, $verse, $content) {
 
 
 function addTopic($topic) {
-
   $db = dbConnect();
   $sql = "INSERT INTO topic_scripture (topic_id, scripture_id ) VALUES (:topic, currval(pg_get_serial_sequence('scriptures','id')) )";
   $stmt = $db->prepare($sql);
