@@ -7,14 +7,18 @@ if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) &
   $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
   $added = add_scripture($book, $chapter, $verse, $content);
 
+  if (isset($_POST['topics'])) {
+      $topics = $_POST['topics'];
+      // $colors is an array of selected values
 
-  $topics = $_POST['topics']
+      foreach( $topics as $topic) {
+        addTopic($topic);
+      }
 
-  var_dump($topics);
+      var_dump($topics);
 
-  foreach( $topics as $topic) {
-    addTopic($topic);
   }
+
 
   // if($added == 1) {
   //   echo "<script>window.alert('did add to db')</script>";
