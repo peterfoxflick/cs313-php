@@ -78,17 +78,10 @@ function add_scripture($book, $chapter, $verse, $content) {
   if (isset($_POST['topics'])) {
         $topics = $_POST['topics'];
         // $colors is an array of selected values
-
         foreach( $topics as $topic) {
           addTopic($db, $topic);
         }
-
-        var_dump($topics);
-
     }
-
-
-
 
   $stmt->closeCursor();
 }

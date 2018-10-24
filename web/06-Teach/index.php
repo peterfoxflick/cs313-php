@@ -53,31 +53,20 @@ function get_all_topics() {
     return $data;
 }
 
+function get_all_topics_from_scripture($scripture_id) {
+  $db = dbConnect();
+  $sql = "SELECT * FROM topic_scripture WHERE scripture_id = {$scripture_id}";
+  $stmt = $db->prepare($sql);
+  $stmt->execute();
+  $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+  $stmt->closeCursor();
+  return $data;
+}
+
 $scriptures = get_all_scriptures();
 $topics = get_all_topics();
 
-function get_most_recent_scriptureId(){
-  $db = dbConnect();
-  $sql = "SELECT id FROM scripture ORDER BY DESC LIMIT 1";
-}
-
-function add_scripture($book, $chapter, $verse, $content) {
-  $db = dbConnect();
-  $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content) RETURNING id";
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(":book", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":chapter", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":verse", $book, PDO::PARAM_STR);
-  $stmt->bindValue(":content", $book, PDO::PARAM_STR);
-  $returnItem = $stmt->execute();
-  var_dump($stmt);
-  exit;
-  $rowsChanged = $stmt->rowCount();
-  $stmt->closeCursor();
-  return $rowsChanged;
-}
-
-
+$scripture_topics = get_all_scripture_topics();
 
 
 ?>
@@ -101,6 +90,13 @@ function add_scripture($book, $chapter, $verse, $content) {
                 <p>
                     <strong><a href="<?= '/scripture?id=$scripture["id"]'; ?>"><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
                     <?= $scripture['content']; ?>"
+                    <?php
+                      $scripture_topcs = get_all_topics_from_scripture($scripture["id"]);
+                      foreach($scripture_topcs as $item) {
+                        echo $topics[$item["topic_id"]];
+                      }
+                    ?>
+
                 </p>
             <?php endforeach; ?>
         </div>
