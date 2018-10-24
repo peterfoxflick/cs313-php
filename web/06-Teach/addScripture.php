@@ -77,16 +77,14 @@ function get_most_recent_scriptureId(){
 
 function add_scripture($book, $chapter, $verse, $content) {
   $db = dbConnect();
-  $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content) RETURNING id";
+  $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":book", $book, PDO::PARAM_STR);
   $stmt->bindValue(":chapter", $chapter, PDO::PARAM_INT);
   $stmt->bindValue(":verse", $verse, PDO::PARAM_INT);
   $stmt->bindValue(":content", $content, PDO::PARAM_STR);
   $stmt->execute();
-  $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
-  return $rowsChanged;
 }
 
 
@@ -94,8 +92,10 @@ function addTopic($topic) {
   $db = dbConnect();
   $sql = "INSERT INTO topic_scripture (topic_id, scripture_id ) VALUES (:topic, currval(pg_get_serial_sequence('scriptures','id')) )";
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(":topic", $topic, PDO::PARAM_STR);
+  $stmt->bindValue(":topic", $topic, PDO::PARAM_INT);
   $stmt->execute();
+  $stmt->closeCursor();
+
 }
 
 
