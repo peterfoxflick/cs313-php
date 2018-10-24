@@ -63,6 +63,16 @@ function get_all_topics_from_scripture($scripture_id) {
   return $data;
 }
 
+function get_topic_name($topic_id) {
+  $db = dbConnect();
+  $sql = "SELECT name FROM topic WHERE id = {$topic_id}";
+  $stmt = $db->prepare($sql);
+  $stmt->execute();
+  $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+  $stmt->closeCursor();
+  return $data[0];
+}
+
 $scriptures = get_all_scriptures();
 $topics = get_all_topics();
 
@@ -91,13 +101,9 @@ $scripture_topics = get_all_scripture_topics();
                     <strong><a href="<?= '/scripture?id=$scripture["id"]'; ?>"><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
                     <?= $scripture['content']; ?>"
                     <?php
-                      $scripture_topcs = get_all_topics_from_scripture($scripture["id"]);
-                      foreach($scripture_topcs as $item) {
-                        foreach($topics as $topic) {
-                          if($topic["id"] = $item["topic_id"]){
-                            echo $topic["name"];
-                          }
-                        }
+                      $scripture_topics = get_all_topics_from_scripture($scripture["id"]);
+                      foreach($scripture_topics as $item) {
+                        echo get_topic_name($item["topic_id"]);
                       }
                     ?>
 
