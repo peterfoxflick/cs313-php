@@ -7,18 +7,6 @@ if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) &
   $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
   $added = add_scripture($book, $chapter, $verse, $content);
 
-  if (isset($_POST['topics'])) {
-      $topics = $_POST['topics'];
-      // $colors is an array of selected values
-
-      foreach( $topics as $topic) {
-        addTopic($topic);
-      }
-
-      var_dump($topics);
-
-  }
-
 
   // if($added == 1) {
   //   echo "<script>window.alert('did add to db')</script>";
@@ -84,17 +72,33 @@ function add_scripture($book, $chapter, $verse, $content) {
   $stmt->bindValue(":verse", $verse, PDO::PARAM_INT);
   $stmt->bindValue(":content", $content, PDO::PARAM_STR);
   $stmt->execute();
+
+
+
+  if (isset($_POST['topics'])) {
+        $topics = $_POST['topics'];
+        // $colors is an array of selected values
+
+        foreach( $topics as $topic) {
+          addTopic($db, $topic);
+        }
+
+        var_dump($topics);
+
+    }
+
+
+
+
   $stmt->closeCursor();
 }
 
 
-function addTopic($topic) {
-  $db = dbConnect();
+function addTopic($db, $topic) {
   $sql = "INSERT INTO topic_scripture (topic_id, scripture_id ) VALUES (:topic, currval(pg_get_serial_sequence('scriptures','id')) )";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":topic", $topic, PDO::PARAM_INT);
   $stmt->execute();
-  $stmt->closeCursor();
 
 }
 
