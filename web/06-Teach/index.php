@@ -4,7 +4,7 @@ if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) &
   $book = filter_var($_POST['book'], FILTER_SANATIZE_STRING);
   $chapter = filter_var($_POST['chapter'], FILTER_SANATIZE_STRING);
   $verse = filter_var($_POST['verse'], FILTER_SANATIZE_STRING);
-  $contnet = filter_var($_POST['contnet'], FILTER_SANATIZE_STRING);
+  $content = filter_var($_POST['content'], FILTER_SANATIZE_STRING);
   $added = add_scripture($book, $chapter, $verse, $content);
   if($added == 1) {
     echo "<script>window.alert('did add to db')</script>";
@@ -61,7 +61,7 @@ function get_most_recent_scriptureId(){
   $sql = "SELECT id FROM scripture ORDER BY DESC LIMIT 1";
 }
 
-function add_scripture($book, $chapter, $verse, $contnet) {
+function add_scripture($book, $chapter, $verse, $content) {
   $db = dbConnect();
   $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content) RETURNING id";
   $stmt = $db->prepare($sql);
