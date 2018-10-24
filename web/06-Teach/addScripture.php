@@ -8,19 +8,19 @@ if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) &
   $added = add_scripture($book, $chapter, $verse, $content);
 
 
-  $topics = filter_var($_POST['topics'], FILTER_SANITIZE_NUMBER_INT);
+  $topics = $_POST['topics']
 
   var_dump($topics);
-  
+
   foreach( $topics as $topic) {
     addTopic($topic);
   }
 
-  if($added == 1) {
-    echo "<script>window.alert('did add to db')</script>";
-  } else {
-    echo "<script>window.alert('did not add to db')</script>";
-  }
+  // if($added == 1) {
+  //   echo "<script>window.alert('did add to db')</script>";
+  // } else {
+  //   echo "<script>window.alert('did not add to db')</script>";
+  // }
 }
 
 function dbConnect(){
