@@ -1,13 +1,16 @@
 <?php
 
-$_POST['chapter'];
-
 if(isset($_POST['chapter']) && isset($_POST['verse']) && isset($_POST['book']) && isset($_POST['content'])) {
   $book = filter_var($_POST['book'], FILTER_SANATIZE_STRING);
   $chapter = filter_var($_POST['chapter'], FILTER_SANATIZE_STRING);
   $verse = filter_var($_POST['verse'], FILTER_SANATIZE_STRING);
   $contnet = filter_var($_POST['contnet'], FILTER_SANATIZE_STRING);
-  add_scripture($book, $chapter, $verse, $content);
+  $added = add_scripture($book, $chapter, $verse, $content);
+  if($added == 1) {
+    echo "<script>window.alert('did add to db')</script>";
+  } else {
+    echo "<script>window.alert('did not add to db')</script>";
+  }
 }
 
 function dbConnect(){
@@ -72,12 +75,8 @@ function add_scripture($book, $chapter, $verse, $contnet) {
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $rowsChanged;
+}
 
-
-
-  $query = pg_query("INSERT ... RETURNING id");
-  $row = pg_fetch_row($query);
-  $new_id = $row['0']
 
 
 
@@ -100,7 +99,7 @@ function add_scripture($book, $chapter, $verse, $contnet) {
             <h1 class="display-3">Scripture Resources</h1>
             <?php foreach($scriptures as $scripture): ?>
                 <p>
-                    <strong><a href=<?= "/scripture?id=$scripture['id']"; ?>><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
+                    <strong><a href="<?= '/scripture?id=$scripture["id"]'; ?>"><?= $scripture['book']; ?> <?= $scripture['chapter']; ?> : <?= $scripture['verse']; ?></strong></a> - "
                     <?= $scripture['content']; ?>"
                 </p>
             <?php endforeach; ?>
@@ -118,26 +117,18 @@ function add_scripture($book, $chapter, $verse, $contnet) {
   <input type="text" id="chapter" name="chapter">
   <input type="text" id="verse" name="verse">
   <input type="textarea" id="content" name="content">
-  <input type="submit" id="submit" name="submit">
+  <input type="submit" id="submit" name="submit" value="Submit">
 
 
-  <?php foreach($topics as $topic) ?>
+  <?php foreach($topics as $topic): ?>
     <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" value=<?= $topic['id'] ?> id=<?= "checkbox-$topic['id']" ?>>
-      <label class="custom-control-label" for=<?= "checkbox-$topic['id']" ?>><?= $topic['name']; ?></label>
+      <input type="checkbox" class="custom-control-input" value="<?= $topic['id'] ?>" id="<?= 'checkbox-$topic["id"]' ?>">
+      <label class="custom-control-label" for="<?= 'checkbox-$topic["id"]' ?>"><?= $topic['name']; ?></label>
     </div>
   <?php endforeach; ?>
 
 
 </form>
 </body>
-
-
-
-
-
-
-
-
 
 </html>
