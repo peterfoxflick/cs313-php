@@ -70,7 +70,7 @@ function add_scripture($book, $chapter, $verse, $content) {
   $stmt->bindValue(":verse", $verse, PDO::PARAM_INT);
   $stmt->bindValue(":content", $content, PDO::PARAM_STR);
   $returnItem = $stmt->execute();
-  var_dump($returnItem);
+  var_dump($stmt);
   exit;
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
