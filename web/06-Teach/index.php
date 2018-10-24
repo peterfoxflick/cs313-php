@@ -112,7 +112,7 @@ function add_scripture($book, $chapter, $verse, $contnet) {
 
 
 
-<form action="teamActivty.php" method="POST">
+<form action="index.php" method="POST">
   <input type="text" id="book" name="book">
   <input type="text" id="chapter" name="chapter">
   <input type="text" id="verse" name="verse">
