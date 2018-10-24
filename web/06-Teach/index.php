@@ -93,7 +93,11 @@ $scripture_topics = get_all_scripture_topics();
                     <?php
                       $scripture_topcs = get_all_topics_from_scripture($scripture["id"]);
                       foreach($scripture_topcs as $item) {
-                        echo $topics[$item["topic_id"]];
+                        foreach($topics as $topic) {
+                          if($topic["id"] = $item["topic_id"]){
+                            echo $topic["name"];
+                          }
+                        }
                       }
                     ?>
 
