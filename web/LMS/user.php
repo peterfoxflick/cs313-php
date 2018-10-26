@@ -48,6 +48,7 @@
 
 
 <?php include './partials/header.php';?>
+<?php include './partials/navbar.php';?>
 
 <div class="container">
   <div class="col">

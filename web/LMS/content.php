@@ -41,6 +41,8 @@ $content_id = $_GET['id'];
 
 
 <?php include './partials/header.php';?>
+<?php include './partials/navbar.php';?>
+
 
 <div class="container">
   <div class="col">

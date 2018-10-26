@@ -41,17 +41,12 @@ $term = $_GET['term'];
 
 <?php include './partials/header.php';?>
 
+<?php include './partials/navbar.php';?>
+
+
 <div class="container">
   <div class="col">
-    <div class="row">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="searchTerm" placeholder="Search" aria-label="search" aria-describedby="button-addon">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon" onclick="searchBtn()">Search</button>
-        </div>
-      </div>
 
-    </div>
 
     <div class="row">
       <h1>Courses matching "<?php echo $term ?>"</h1>
