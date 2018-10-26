@@ -45,6 +45,7 @@
 <div class="container">
   <div class="col">
 
+
     <div class="row">
       <h1>Courses to pick from</h1>
     </div>
