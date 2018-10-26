@@ -44,17 +44,6 @@
 
 <div class="container">
   <div class="col">
-    <div class="row">
-      <a class="btn btn-primary" href="./user.php?id=2" role="button">My Progress</a>
-
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="button-addon">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon" onclick="searchBtn()">Search</button>
-        </div>
-      </div>
-
-    </div>
 
     <div class="row">
       <h1>Courses to pick from</h1>
