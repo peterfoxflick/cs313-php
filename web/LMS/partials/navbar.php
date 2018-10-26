@@ -13,9 +13,9 @@
         <a class="nav-link" href="./user.php?id=2" role="button">My Progress</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <div class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" id="searchTerm" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" onclick="searchBtn()">Search</button>
-    </form>
+    </div>
   </div>
 </nav>
