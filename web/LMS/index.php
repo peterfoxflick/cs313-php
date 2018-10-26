@@ -36,6 +36,12 @@
 
 <?php include './partials/header.php';?>
 
+<?php include './partials/navbar.php';?>
+
+
+
+
+
 <div class="container">
   <div class="col">
     <div class="row">
@@ -64,11 +70,6 @@
    </div>
  </div>
 
- <script>
- function searchBtn() {
-   var url = "./search.php?term=" + document.getElementById("searchTerm").value;
-   location.href = url;
- }
- </script>
+
 
 <?php include './partials/footer.php';?>
