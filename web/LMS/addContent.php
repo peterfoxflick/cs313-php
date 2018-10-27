@@ -1,8 +1,23 @@
+<?php include './partials/db.php';?>
+
+
 <?php
 
 
 
+//get courses
 
+function get_all_courses() {
+  $db = dbConnect();
+  $sql = "SELECT * FROM course";
+  $stmt = $db->prepare($sql);
+  $stmt->execute();
+  $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+  $stmt->closeCursor();
+  return $data;
+}
+
+$courses = get_all_courses();
 
 
 
@@ -54,7 +69,7 @@
           <div class="form-group">
              <label for="orderIn">Position</label>
              <input type="number" class="form-control" id="orderIn" placeholder="Enter postion in course">
-           </div> 
+           </div>
 
 
          <input type="submit"  class="btn btn-primary" id="submit" name="submit" value="Submit">
