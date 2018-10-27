@@ -35,4 +35,26 @@ function get_all_courses() {
 }
 
 
+  function get_all_content($id) {
+    $db = dbConnect();
+    $sql = "SELECT * FROM content WHERE course_id={$id}";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+    $stmt->closeCursor();
+    return $data;
+  }
+
+  function get_course_data($id) {
+    $db = dbConnect();
+    $sql = "SELECT name FROM course WHERE id={$id}";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+    $stmt->closeCursor();
+    return $data[0]["name"];
+  }
+
+
+
  ?>

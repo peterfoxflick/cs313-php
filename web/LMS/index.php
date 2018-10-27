@@ -53,7 +53,7 @@
     <div class="row">
       <ul class="list-group">
         <?php foreach($courses as $course): ?>
-          <?php echo "<a href='./course.php?id={$course['id']}' class='list-group-item list-group-item-action'>{$course['name']}</a>" ?>
+          <?php echo "<a href='./course.php?id={$course['id']}' class='list-group-item list-group-item-action'>{$course['name']}</a><a href='./editCourse.php?id={$course['id']}' ><i class='far fa-edit'></i></a>" ?>
          <?php endforeach; ?>
       </ul>
      </div>
