@@ -17,10 +17,10 @@
        <form action="controller/addCourse.php" method="POST">
          <div class="form-group">
             <label for="nameIn">Name of Course</label>
-            <input type="text" class="form-control" id="nameIn" placeholder="Enter title">
+            <input type="text" class="form-control" id="nameIn" name="nameIn" placeholder="Enter title">
           </div>
 
-         <input type="submit"  class="btn btn-primary" id="submit" name="submit" value="Submit">
+         <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Submit">
 
        </form>
       </div>
