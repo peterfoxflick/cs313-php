@@ -1,0 +1,9 @@
+Project Title: Simple LMS
+
+Site is currently set to logged in.
+
+1. Add new course: A page to add a course to the list. https://mysterious-sands-95461.herokuapp.com/LMS/addCourse.php
+
+2. Add new Page: A page to create a new page, assign its course, and position. https://mysterious-sands-95461.herokuapp.com/LMS/addContent.php
+
+3. Edit Course: This page allows for a course to be edited. Right now it shows the pages and their position. https://mysterious-sands-95461.herokuapp.com/LMS/editCourse.php?id=1

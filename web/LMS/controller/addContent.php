@@ -10,6 +10,10 @@ if(isset($_POST['nameIn']) && isset($_POST['dataIn']) && isset($_POST['courseIn'
 
 
   add_content($name, $data, $courseId, $orderId);
+
+  echo "<script type="text/javascript">location.href = '../index.php';</script>";
+} else {
+  echo "<script type="text/javascript">location.href = '../index.php';</script>";
 }
 
 
@@ -28,5 +32,3 @@ if(isset($_POST['nameIn']) && isset($_POST['dataIn']) && isset($_POST['courseIn'
   }
 
  ?>
-
- <script type="text/javascript">location.href = '../index.php';</script>
