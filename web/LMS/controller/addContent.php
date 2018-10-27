@@ -1,7 +1,6 @@
-<?php include '../partials/db.php';?>
 
 <?php
-
+include '../partials/db.php';
 
 if(isset($_POST['nameIn']) && isset($_POST['dataIn']) && isset($_POST['courseIn']) && isset($_POST['orderIn'])) {
   $name = filter_var($_POST['nameIn'], FILTER_SANITIZE_STRING);
