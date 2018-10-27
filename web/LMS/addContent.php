@@ -3,23 +3,8 @@
 
 <?php
 
-
-
 //get courses
-
-function get_all_courses() {
-  $db = dbConnect();
-  $sql = "SELECT * FROM course";
-  $stmt = $db->prepare($sql);
-  $stmt->execute();
-  $data = $stmt->fetchAll(PDO::FETCH_NAMED);
-  $stmt->closeCursor();
-  return $data;
-}
-
 $courses = get_all_courses();
-
-
 
  ?>
 
