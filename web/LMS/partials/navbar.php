@@ -13,7 +13,10 @@
         <a class="nav-link" href="./user.php?id=2" role="button">My Progress</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./addContent.php?id=2" role="button">Add a Page</a>
+        <a class="nav-link" href="./addContent.php" role="button">Add a Page</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./addCourse.php" role="button">Add a Course</a>
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
