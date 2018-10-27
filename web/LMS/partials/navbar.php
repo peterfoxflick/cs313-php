@@ -7,10 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="https://mysterious-sands-95461.herokuapp.com/LMS/index.php">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./user.php?id=2" role="button">My Progress</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./addContent.php?id=2" role="button">Add a Page</a>
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
