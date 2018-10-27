@@ -29,21 +29,35 @@
      <div class="row">
 
        <form action="controller/addContent.php" method="POST">
-         <input type="text" id="book" name="book">
-         <input type="text" id="chapter" name="chapter">
-         <input type="text" id="verse" name="verse">
-         <input type="textarea" id="content" name="content">
-         <input type="submit" id="submit" name="submit" value="Submit">
+         <div class="form-group">
+            <label for="nameIn">Title of Page</label>
+            <input type="text" class="form-control" id="nameIn" placeholder="Enter title">
+          </div>
 
 
+          <div class="form-group">
+            <label for="dataIn">Page Contents</label>
+            <textarea class="form-control" id="dataIn" rows="3"></textarea>
+          </div>
 
-           <?php foreach($topics as $topic): ?>
-             <div class="custom-control custom-checkbox">
-               <input type="checkbox" class="custom-control-input" name="topics[]" value="<?= $topic['id'] ?>" id="<?= checkbox-$topic['id'] ?>">
-               <label class="custom-control-label" for="<?= checkbox-$topic['id'] ?>"><?= $topic['name']; ?></label>
-             </div>
-           <?php endforeach; ?>
 
+          <div class="form-group">
+            <label for="courseIn">Course</label>
+            <select id="CourseIn" class="form-control">
+              <option selected>Choose...</option>
+              <?php foreach($courses as $course): ?>
+                 <option value="<?= $course['id'] ?>"><?= $course['name']; ?></option>
+               <?php endforeach; ?>
+             </select>
+          </div>
+
+          <div class="form-group">
+             <label for="orderIn">Position</label>
+             <input type="number" class="form-control" id="orderIn" placeholder="Enter postion in course">
+           </div> 
+
+
+         <input type="submit"  class="btn btn-primary" id="submit" name="submit" value="Submit">
 
        </form>
       </div>
