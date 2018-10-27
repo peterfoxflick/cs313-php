@@ -58,9 +58,9 @@ CREATE TABLE "course" (
  name  VARCHAR(40)         NOT NULL,
  PRIMARY KEY( id )
 );
-INSERT INTO "course" VALUES (1, 'Growing Plants');
-INSERT INTO "course" VALUES (2, 'Keeping Bees');
-INSERT INTO "course" VALUES (3, 'Arduinos for Beginners');
+INSERT INTO course(name) VALUES ('Growing Plants');
+INSERT INTO course(name) VALUES ('Keeping Bees');
+INSERT INTO course(name) VALUES ('Arduinos for Beginners');
 
 
 /* Complete

@@ -31,17 +31,17 @@ $courses = get_all_courses();
        <form action="controller/addContent.php" method="POST">
          <div class="form-group">
             <label for="nameIn">Title of Page</label>
-            <input type="text" class="form-control" id="nameIn" placeholder="Enter title">
+            <input type="text" class="form-control" id="nameIn" name="nameIn" placeholder="Enter title">
           </div>
 
           <div class="form-group">
             <label for="dataIn">Page Contents</label>
-            <textarea class="form-control" id="dataIn" rows="3"></textarea>
+            <textarea class="form-control" id="dataIn" name="dataIn" rows="3"></textarea>
           </div>
 
           <div class="form-group">
             <label for="courseIn">Course</label>
-            <select id="courseIn" class="form-control">
+            <select id="courseIn" name="courseIn" class="form-control">
               <option selected>Choose...</option>
               <?php foreach($courses as $course): ?>
                  <option value="<?= $course['id'] ?>"><?= $course['name']; ?></option>
@@ -51,7 +51,7 @@ $courses = get_all_courses();
 
           <div class="form-group">
              <label for="orderIn">Position</label>
-             <input type="number" class="form-control" id="orderIn" placeholder="Enter postion in course">
+             <input type="number" class="form-control" id="orderIn" name="orderIn" placeholder="Enter postion in course">
            </div>
 
          <input type="submit"  class="btn btn-primary" id="submit" name="submit" value="Submit">

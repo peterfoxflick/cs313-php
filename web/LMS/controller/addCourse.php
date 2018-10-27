@@ -21,7 +21,7 @@ if(isset($_POST['nameIn'])) {
 
   function add_course($name) {
     $db = dbConnect();
-    $sql = "INSERT INTO course ( name ) VALUES (:name)";
+    $sql = "INSERT INTO course (name) VALUES (:name)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(":name", $name, PDO::PARAM_STR);
     $stmt->execute();
