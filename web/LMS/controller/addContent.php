@@ -1,4 +1,4 @@
-<?php include './partials/db.php';?>
+<?php include '../partials/db.php';?>
 
 <?php
 

@@ -4,9 +4,6 @@
  <?php include './partials/navbar.php';?>
 
 
-
-
-
  <div class="container">
    <div class="col">
 
