@@ -21,6 +21,6 @@ if(isset($_POST['nameIn'])) {
     $stmt->closeCursor();
   }
 
- ?>
+  echo "<script type="text/javascript">location.href = '../index.php';</script>";
 
- <script type="text/javascript">location.href = '../index.php';</script>
+ ?>
