@@ -6,6 +6,7 @@ if(isset($_POST['nameIn'])) {
   $name = filter_var($_POST['nameIn'], FILTER_SANITIZE_STRING);
 
   add_course($name);
+  echo $name;
 }
 
 
@@ -20,6 +21,6 @@ if(isset($_POST['nameIn'])) {
     $stmt->closeCursor();
   }
 
-  echo "<script type='text/javascript'>location.href = '../index.php';</script>";
+  //echo "<script type='text/javascript'>location.href = '../index.php';</script>";
 
  ?>
