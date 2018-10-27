@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
 <?php
 include '../partials/db.php';
@@ -26,3 +33,6 @@ if(isset($_POST['nameIn'])) {
   //echo "<script type='text/javascript'>location.href = '../index.php';</script>";
 
  ?>
+
+</body>
+</html>
