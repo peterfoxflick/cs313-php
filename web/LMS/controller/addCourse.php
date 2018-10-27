@@ -11,14 +11,10 @@ include '../partials/db.php';
 
 
 if(isset($_POST['nameIn'])) {
-  echo $_POST['nameIn'];
 
   $name = filter_var($_POST['nameIn'], FILTER_SANITIZE_STRING);
   add_course($name);
 
-  echo $name;
-
-  echo $_POST['nameIn'];
 }
 
 
@@ -33,7 +29,7 @@ if(isset($_POST['nameIn'])) {
     $stmt->closeCursor();
   }
 
-  //echo "<script type='text/javascript'>location.href = '../index.php';</script>";
+  echo "<script type='text/javascript'>location.href = '../index.php';</script>";
 
  ?>
 
