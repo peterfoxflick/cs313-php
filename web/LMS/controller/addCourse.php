@@ -4,9 +4,11 @@ include '../partials/db.php';
 
 if(isset($_POST['nameIn'])) {
   $name = filter_var($_POST['nameIn'], FILTER_SANITIZE_STRING);
-
   add_course($name);
+
   echo $name;
+
+  echo $_POST['nameIn'];
 }
 
 
