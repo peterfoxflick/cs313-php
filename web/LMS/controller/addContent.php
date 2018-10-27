@@ -9,6 +9,7 @@ if(isset($_POST['nameIn']) && isset($_POST['dataIn']) && isset($_POST['courseIn'
 
 
   add_content($name, $data, $courseId, $orderId);
+}
 
 
 
