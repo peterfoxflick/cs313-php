@@ -3,8 +3,13 @@
 session_start();
 
 function printUserName(){
-  $_SESSION['user_name']= $username;  // Initializing Session with value of PHP Variable
-  echo "Welcome " . $username;
+  if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];  // Initializing Session with value of PHP Variable
+    echo "Welcome " . $username;
+  } else {
+    header('Location: signin.php');
+    die();
+  }
 }
 
  ?>
