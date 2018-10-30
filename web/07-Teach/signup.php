@@ -13,18 +13,20 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   //Check if valid password and username
   $valid = false;
 
-  if($password.lengt)
-
-
-  //create account
-  $hash = password_hash($password, PASSWORD_DEFAULT);
-  add_user($username, $hash);
-
-  //Redirect
-  header('Location: signin.php');
+  if(checkPassword($password) && is_unique_username($username)){
+    //create account
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    add_user($username, $hash);
+  }
 }
+  //Redirect
+header('Location: signin.php');
+die();
 
-
+function checkPassword($password){
+  $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])[[:print:]]{8,}$/';
+  return preg_match($pattern, $password);
+}
 
 function dbConnect(){
     try {
@@ -46,11 +48,11 @@ function dbConnect(){
     }
 }
 
-function check_user_exists($username) {
+function is_unique_username($username) {
   $db = dbConnect();
-  $sql = 'SELECT * FROM "user" WHERE "user_name" = :user_name';
+  $sql = 'SELECT * FROM "user" WHERE user_name = :user_name';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(":username", $username, PDO::PARAM_STR);
+  $stmt->bindValue(":user_name", $username, PDO::PARAM_STR);
   $stmt->execute();
   $data = $stmt->fetchAll(PDO::FETCH_NAMED);
   $stmt->closeCursor();
@@ -70,12 +72,5 @@ function add_user($username, $hash) {
   $stmt->execute();
   $stmt->closeCursor();
 }
-
-
-
-
-
-
-
 
  ?>
