@@ -7,3 +7,42 @@ Site is currently set to logged in.
 2. Add new Page: A page to create a new page, assign its course, and position. https://mysterious-sands-95461.herokuapp.com/LMS/addContent.php
 
 3. Edit Course: This page allows for a course to be edited. Right now it shows the pages and their position. https://mysterious-sands-95461.herokuapp.com/LMS/editCourse.php?id=1
+
+
+
+
+
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://mysterious-sands-95461.herokuapp.com/LMS/index.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/peterfoxflick/cs313-php
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+Add page, course, and view edit page.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+Edit page, edit course order.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+I learned that you can change the post name by changing the name of the input, not the id.
+
+
+6. What is a benefit of having a foreign key constraint?
+It makes cross-listing between tables easier and it checks current status of the id in the foreign table. This allows you to add the constraint knowing that the id is a valid id as both tables change.
+
+7. Please select the category you feel best describes your assignment:
+A - Some attempt was made
+B - Developing, but significantly deficient
+C - Slightly deficient, but still mostly adequate
+D - Meets requirements
+E - Shows creativity and excels above and beyond requirements
+
+*E*
+
+The add functions work and look clean. 
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
