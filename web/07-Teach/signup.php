@@ -63,7 +63,7 @@ function check_user_exists($username) {
 
 function add_user($username, $hash) {
   $db = dbConnect();
-  $sql = "INSERT INTO '"user"' (username, password) VALUES (:username, :hash)";
+  $sql = 'INSERT INTO "user" (username, password) VALUES (:username, :hash)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":username", $username, PDO::PARAM_STR);
   $stmt->bindValue(":hash", $hash, PDO::PARAM_STR);
