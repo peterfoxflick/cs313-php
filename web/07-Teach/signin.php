@@ -1,4 +1,5 @@
 <?php
+session_start();
 // SQL
 /******************************************************************
 
@@ -211,8 +212,8 @@ Welcome page
       <div class="login">
         <h2>LOG IN</h2>
         <div class="inputbox">
-          <input type="text" name="email" placeholder="  EMAIL">
-          <input type="password" name="password" placeholder="  PASSWORD">
+          <input type="text" name="user_name" placeholder="USERNAME">
+          <input type="password" name="password" placeholder="PASSWORD">
         </div>
         <p>FORGET PASSWORD?</p>
         <input class="button" type="submit" value="LOG IN">
@@ -223,9 +224,8 @@ Welcome page
       <div class="signup hide">
         <h2>SIGN UP</h2>
         <div class="inputbox">
-          <input type="text" name="fullname" placeholder="  FULLNAME">
-          <input type="text" name="email" placeholder="  EMAIL">
-          <input type="password" name="password" placeholder="  PASSWORD">
+          <input type="text" name="username" placeholder="username">
+          <input type="password" name="password" placeholder="PASSWORD">
         </div>
         <input class="button" type="submit" value="SIGN UP">
       </div>
