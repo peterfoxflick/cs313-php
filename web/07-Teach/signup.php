@@ -11,13 +11,11 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   $password = filter_var($_POST['password'], FILTER_SANATIZE_STRING);
 
   //Check if valid password and username
-  $valid = false;
-
-  if(checkPassword($password) && is_unique_username($username)){
+//  if(checkPassword($password) && is_unique_username($username)){
     //create account
     $hash = password_hash($password, PASSWORD_DEFAULT);
     add_user($username, $hash);
-  }
+//  }
 }
   //Redirect
 header('Location: signin.php');
