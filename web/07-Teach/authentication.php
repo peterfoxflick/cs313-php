@@ -23,7 +23,7 @@ function dbConnect(){
 
 function getDB() {
     $db = dbConnect();
-    $sql = "SELECT * FROM \"user\""; //Will this work?
+    $sql = "SELECT * FROM user_login"; //Will this work?
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
