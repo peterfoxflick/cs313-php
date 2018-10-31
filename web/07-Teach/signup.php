@@ -50,7 +50,7 @@ function dbConnect(){
 
 function is_unique_username($username) {
   $db = dbConnect();
-  $sql = 'SELECT * FROM "user" WHERE user_name = :user_name';
+  $sql = "SELECT * FROM \"user\" WHERE user_name = :user_name";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":user_name", $username, PDO::PARAM_STR);
   $stmt->execute();
@@ -65,7 +65,7 @@ function is_unique_username($username) {
 
 function add_user($username, $hash) {
   $db = dbConnect();
-  $sql = 'INSERT INTO "user" (user_name, password) VALUES (:username, :hash)';
+  $sql = "INSERT INTO \"user\" (user_name, password) VALUES (:username, :hash)";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(":username", $username, PDO::PARAM_STR);
   $stmt->bindValue(":hash", $hash, PDO::PARAM_STR);
