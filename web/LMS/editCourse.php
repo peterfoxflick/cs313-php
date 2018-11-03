@@ -25,19 +25,43 @@ $name = get_course_data($course_id);
      <div class="row">
        <ul class="list-group" id="list">
          <?php foreach($contents as $content): ?>
-           <?php echo "<li><a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a> POS: {$content['course_order']}</li>" ?>
+           <?php echo "<li><a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a></li>" ?>
           <?php endforeach; ?>
        </ul>
       </div>
     </div>
+    <button
   </div>
+
+
 
 
 
  <?php include './partials/footer.php';?>
  <script>
  var el = document.getElementById('list');
- var sortable = Sortable.create(el);
+ Sortable.create(el, {
+ 	store: {
+ 		/**
+ 		 * Get the order of elements. Called once during initialization.
+ 		 * @param   {Sortable}  sortable
+ 		 * @returns {Array}
+ 		 */
+ 		get: function (sortable) {
+ 			var order = localStorage.getItem(sortable.options.group.name);
+ 			return order ? order.split('|') : [];
+ 		},
+
+ 		/**
+ 		 * Save the order of elements. Called onEnd (when the item is dropped).
+ 		 * @param {Sortable}  sortable
+ 		 */
+ 		set: function (sortable) {
+ 			var order = sortable.toArray();
+ 			console.log(order.join('|'));
+ 		}
+ 	}
+ })
  </script>
 
 
