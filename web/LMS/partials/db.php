@@ -37,7 +37,7 @@ function get_all_courses() {
 
   function get_all_content($id) {
     $db = dbConnect();
-    $sql = "SELECT * FROM content WHERE course_id={$id}";
+    $sql = "SELECT * FROM content WHERE course_id={$id} ORDER BY course_order ASC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
@@ -47,7 +47,7 @@ function get_all_courses() {
 
   function get_course_data($id) {
     $db = dbConnect();
-    $sql = "SELECT name FROM course WHERE id={$id} ORDER BY course_order ASC";
+    $sql = "SELECT name FROM course WHERE id={$id}";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
