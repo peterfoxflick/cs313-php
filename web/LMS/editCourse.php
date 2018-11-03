@@ -30,9 +30,11 @@ $name = get_course_data($course_id);
        </ul>
       </div>
     </div>
+
+    <button class="btn" onclick="saveData" value="Save">
     <form action="controller/editCourse.php" method="POST">
       <input type="hidden" id="savedData" value="" name="newOrder" />
-      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Save">
+      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send">
 
     </form>  </div>
 
@@ -44,7 +46,7 @@ $name = get_course_data($course_id);
  <script>
 
 
- function save(){
+ function saveData(){
    var list = document.getElementById('list');
    var ids = list.querySelectorAll('*[id]');
    document.getElementById('savedData').value = ids;
