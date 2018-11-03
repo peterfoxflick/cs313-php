@@ -41,6 +41,7 @@ $name = get_course_data($course_id);
  <script>
  var el = document.getElementById('list');
  Sortable.create(el, {
+ 	group: "localStorage-example",
  	store: {
  		/**
  		 * Get the order of elements. Called once during initialization.
@@ -58,7 +59,8 @@ $name = get_course_data($course_id);
  		 */
  		set: function (sortable) {
  			var order = sortable.toArray();
- 			console.log(order.join('|'));
+ 			localStorage.setItem(sortable.options.group.name, order.join('|'));
+      console.log(sortable.options.group.name + " +   +  " + order.join('|'));
  		}
  	}
  })
