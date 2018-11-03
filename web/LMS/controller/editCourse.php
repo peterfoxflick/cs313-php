@@ -1,0 +1,30 @@
+<?php
+include '../partials/db.php';
+
+
+if(isset($_POST['savedData'])) {
+
+  $savedData = filter_var($_POST['savedData'], FILTER_SANITIZE_STRING);
+  $data = unserialize($savedData);
+  for ($i = 0; $i < count($data); $i++) {
+    edit_course($data[$i], $i);
+  }
+
+}
+
+
+
+  function edit_course($id, $order) {
+    $db = dbConnect();
+    $sql = "UPDATE content SET :course_order $order WHERE id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(":course_order", $order, PDO::PARAM_STR);
+    $stmt->bindValue(":id", $id, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $stmt->closeCursor();
+  }
+
+  echo "<script type='text/javascript'>location.href = '../index.php';</script>";
+
+ ?>

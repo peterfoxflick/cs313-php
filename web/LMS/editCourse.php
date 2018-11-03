@@ -30,7 +30,11 @@ $name = get_course_data($course_id);
        </ul>
       </div>
     </div>
-  </div>
+    <form action="controller/editCourse.php" method="POST">
+      <input type="hidden" id="savedData" value="" name="newOrder" />
+      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Save">
+
+    </form>  </div>
 
 
 
@@ -38,6 +42,16 @@ $name = get_course_data($course_id);
 
  <?php include './partials/footer.php';?>
  <script>
+
+
+ function save(){
+   var list = document.getElementById('list');
+   var ids = list.querySelectorAll('*[id]');
+   document.getElementById('savedData').value = ids;
+ }
+
+
+
  var el = document.getElementById('list');
  Sortable.create(el, {
  	group: "localStorage-example",
@@ -58,18 +72,11 @@ $name = get_course_data($course_id);
  		 */
  		set: function (sortable) {
  			var order = sortable.toArray();
-
+ 			localStorage.setItem(sortable.options.group.name, order.join('|'));
+      save();
  		}
  	}
  })
-
-
- function save(){
-   var list = document.getElementById('list');
-   var ids = list.querySelectorAll('*[id]');
-   console.log(ids);
-
- }
  </script>
 
 
