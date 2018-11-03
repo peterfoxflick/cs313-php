@@ -25,7 +25,7 @@ $course_id = $_GET['id'];
 
   function get_all_content($id) {
     $db = dbConnect();
-    $sql = "SELECT * FROM content WHERE course_id={$id}";
+    $sql = "SELECT * FROM content WHERE course_id={$id} ORDER BY course_order ASC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
