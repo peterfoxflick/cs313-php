@@ -31,7 +31,7 @@ $name = get_course_data($course_id);
       </div>
     </div>
 
-    <button class="btn" onclick="saveData" value="Save">
+    <button class="btn" onclick="saveData">Save</button>
     <form action="controller/editCourse.php" method="POST">
       <input type="hidden" id="savedData" value="" name="newOrder" />
       <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send">
