@@ -25,7 +25,7 @@ $name = get_course_data($course_id);
      <div class="row">
        <ul class="list-group" id="list">
          <?php foreach($contents as $content): ?>
-           <?php echo "<a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a> POS: {$content['course_order']}" ?>
+           <?php echo "<li><a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a> POS: {$content['course_order']}</li>" ?>
           <?php endforeach; ?>
        </ul>
       </div>
