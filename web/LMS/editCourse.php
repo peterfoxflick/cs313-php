@@ -30,7 +30,6 @@ $name = get_course_data($course_id);
        </ul>
       </div>
     </div>
-    <button
   </div>
 
 
