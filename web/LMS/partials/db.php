@@ -47,7 +47,7 @@ function get_all_courses() {
 
   function get_course_data($id) {
     $db = dbConnect();
-    $sql = "SELECT name FROM course WHERE id={$id} course_order";
+    $sql = "SELECT name FROM course WHERE id={$id} ORDER BY course_order ASC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_NAMED);
