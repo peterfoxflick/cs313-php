@@ -15,8 +15,8 @@
 */
   CREATE TABLE user_login (
    id         SERIAL                 NOT NULL,
-   user_name  VARCHAR(20)            NOT NULL,
-   password   VARCHAR(20)            NOT NULL,
+   user_name  TEXT            NOT NULL,
+   password   TEXT            NOT NULL,
    PRIMARY KEY( id )
 );
 

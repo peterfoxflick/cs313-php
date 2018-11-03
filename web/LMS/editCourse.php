@@ -23,7 +23,7 @@ $name = get_course_data($course_id);
        <h1><?php echo $name ?></h1>
      </div>
      <div class="row">
-       <ul class="list-group">
+       <ul class="list-group sortable">
          <?php foreach($contents as $content): ?>
            <?php echo "<a href='./content.php?id={$content['id']}' class='list-group-item list-group-item-action'>{$content['name']}</a> POS: {$content['course_order']}" ?>
           <?php endforeach; ?>
@@ -32,4 +32,8 @@ $name = get_course_data($course_id);
     </div>
   </div>
 
+  <script src="scripts/jquery.sortable.js"></script>
+  <script>
+      $('.sortable').sortable();
+  </script>
  <?php include './partials/footer.php';?>
