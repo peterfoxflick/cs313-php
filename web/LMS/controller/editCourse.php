@@ -17,9 +17,9 @@ if(isset($_POST['id'])) {
 
   function edit_course($id, $order) {
     $db = dbConnect();
-    $sql = "UPDATE content SET :course_order = $order WHERE id = :id";
+    $sql = "UPDATE content SET course_order = :order WHERE id = :id";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(":course_order", $order, PDO::PARAM_STR);
+    $stmt->bindValue(":order", $order, PDO::PARAM_STR);
     $stmt->bindValue(":id", $id, PDO::PARAM_STR);
     $stmt->execute();
 
