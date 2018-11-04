@@ -37,12 +37,14 @@ $content_id = $_GET['id'];
 
 
      <div class="row">
-       <h1>Build A Page</h1>
+       <h1>Edit A Page</h1>
      </div>
 
      <div class="row">
 
        <form action="controller/editContent.php" method="POST">
+         <input type="number" type="hidden" id="id" name="id" value="<?php echo $content_id; ?>">
+
          <div class="form-group">
             <label for="nameIn">Title of Page</label>
             <input type="text" class="form-control" id="nameIn" name="nameIn" placeholder="Enter title" value="<?php echo $name; ?>">
