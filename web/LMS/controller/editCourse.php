@@ -6,10 +6,8 @@ if(isset($_POST['id'])) {
 
   $savedData = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
   $data = json_decode($savedData, true);
-  syslog($data);
 
   for ($i = 0; $i < count($data); $i++) {
-    syslog($data[$i]);
     edit_course($data[$i], $i);
   }
 
