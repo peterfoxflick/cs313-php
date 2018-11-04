@@ -47,7 +47,7 @@ $name = get_course_data($course_id);
     console.log(ids);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", yourUrl, true);
+    xhr.open("POST", "controller/editCourse.php", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
       id: ids
