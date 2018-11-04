@@ -14,10 +14,10 @@ https://github.com/peterfoxflick/cs313-php/blob/master/db/myDb.sql
 
 5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
 The app assumes your logged-in. The use is able to access courses, view progress and create new courses. After a course has been created the user can add pages by clicking on the "add page" link.
-The edit button allows you to change the order of the courses. The user can also edit each content page using the edit button. 
+The edit button allows you to change the order of the courses. The user can also edit each content page using the edit button on that specific page.
 
 6. Briefly describe any pieces of the assignment that are not yet working correctly.
-
+Changing the order in the edit course page does not update the system. 
 
 
 --------------------------------
@@ -28,13 +28,13 @@ For each of the following requirements, please replace the "(YES/NO)" with eithe
 
 Requirements
 ------------
-(YES/NO) 1. Your web application is running in Heroku.
-(YES/NO) 2. Your latest source code is in GitHub.
-(YES/NO) 3. Your web application uses data stored in the session.
-(YES/NO) 4. Your web application uses a PostgreSQL database at Heroku.
-(YES/NO) 5. Your database schema includes foreign key references.
-(YES/NO) 6. Your web application includes an SQL SELECT query that joins multiple tables.
-(YES/NO) 7. Your web application includes an SQL UPDATE or INSERT statement.
+YES 1. Your web application is running in Heroku.
+YES 2. Your latest source code is in GitHub.
+YES 3. Your web application uses data stored in the session.
+YES 4. Your web application uses a PostgreSQL database at Heroku.
+YES 5. Your database schema includes foreign key references.
+YES 6. Your web application includes an SQL SELECT query that joins multiple tables.
+YES 7. Your web application includes an SQL UPDATE or INSERT statement.
 
 For each of the following criteria, please replace the "(A-E)" with either the "A", "B", "C", "D", or "E" category you feel best describes your work.
 
@@ -48,14 +48,15 @@ E - Shows creativity and excels above and beyond requirements.
 
 Criteria
 ----------
-(A-E) 1. Professional look and feel.
-(A-E) 2. Accomplishes a meaningful/interesting task.
-(A-E) 3. Demonstrates skill with HTML, CSS, and JavaScript.
-(A-E) 4. Demonstrates skill with PHP.
-(A-E) 5. Demonstrates good database design principles.
-(A-E) 6. Demonstrates skill in database retrieval.
-(A-E) 7. Demonstrates skill in database modification.
-(A-E) 8. Demonstrates mastery of client-side/server-side coordination and communication.
-(A-E) 9. Overall project evaluation.
+E 1. Professional look and feel.
+E 2. Accomplishes a meaningful/interesting task.
+E 3. Demonstrates skill with HTML, CSS, and JavaScript.
+E 4. Demonstrates skill with PHP.
+E 5. Demonstrates good database design principles.
+E 6. Demonstrates skill in database retrieval.
+D 7. Demonstrates skill in database modification.
+E 8. Demonstrates mastery of client-side/server-side coordination and communication.
+E 9. Overall project evaluation.
 
 10. Finally, please provide an overall description/justification of the categories you selected.
+Project works, and uses multiple pages, the content is easy to view, navigate and edit. All in all it looks and works above expectations. 
