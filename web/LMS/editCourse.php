@@ -44,13 +44,17 @@ $name = get_course_data($course_id);
  function saveData(){
     var list = document.getElementById('list');
     var ids = list.querySelectorAll('*[id]');
-    console.log(ids);
+    var results = [];
+
+    for(var i = 0; i < ids.length; i++){
+      results.push(ids[i].id);
+    }
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "controller/editCourse.php", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
-      id: ids
+      id: results
     }));
  }
 
