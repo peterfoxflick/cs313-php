@@ -13,7 +13,7 @@
   user_name
   password
 */
-  CREATE TABLE user_login (
+  CREATE TABLE "user" (
    id         SERIAL                 NOT NULL,
    user_name  TEXT            NOT NULL,
    password   TEXT            NOT NULL,
