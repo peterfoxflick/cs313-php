@@ -21,7 +21,7 @@ if(isset($_POST['id']) && isset($_POST['nameIn']) && isset($_POST['dataIn']) && 
 
   function edit_content($id, $name, $data, $courseId, $orderId) {
     $db = dbConnect();
-    $sql = "UPDATE content SET name = :name , data = :data , course_id :course_id , course_order = :course_order WHERE id = :id";
+    $sql = "UPDATE content SET name = :name , data = :data , course_id = :course_id , course_order = :course_order WHERE id = :id";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(":name", $name, PDO::PARAM_STR);
     $stmt->bindValue(":data", $data, PDO::PARAM_STR);
