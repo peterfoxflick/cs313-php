@@ -47,7 +47,7 @@ $content_id = $_GET['id'];
 <div class="container">
   <div class="col">
     <div class="row">
-      <h1><?= $name ?> <a href=<?php echo "./editContent.php?id={$content_id}" ?><i class='far fa-edit'></i></a></h1>
+      <h1><?= $name ?> <a href="<?php echo './editContent.php?id={$content_id}' ?>"<i class='far fa-edit'></i></a></h1>
     </div>
     <div class="row">
       <ul class="list-group">

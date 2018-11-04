@@ -43,7 +43,7 @@ $content_id = $_GET['id'];
      <div class="row">
 
        <form action="controller/editContent.php" method="POST">
-         <input type="number" type="hidden" id="id" name="id" value="<?php echo $content_id; ?>">
+         <input type="number" type="hidden" name="id" value="<?php echo $content_id; ?>">
 
          <div class="form-group">
             <label for="nameIn">Title of Page</label>
@@ -52,7 +52,7 @@ $content_id = $_GET['id'];
 
           <div class="form-group">
             <label for="dataIn">Page Contents</label>
-            <textarea class="form-control" id="dataIn" name="dataIn" rows="3" value="<?php echo $text; ?>"></textarea>
+            <textarea class="form-control" id="dataIn" name="dataIn" rows="3"><?php echo $text; ?></textarea>
           </div>
 
           <div class="form-group">
@@ -67,7 +67,7 @@ $content_id = $_GET['id'];
 
           <div class="form-group">
              <label for="orderIn">Position</label>
-             <input type="number" value="<?= $data['course_order']; ?>"> class="form-control" id="orderIn" name="orderIn" placeholder="Enter postion in course">
+             <input type="number" value="<?= $data['course_order']; ?>" class="form-control" id="orderIn" name="orderIn" placeholder="Enter postion in course">
            </div>
 
          <input type="submit"  class="btn btn-primary" id="submit" name="submit" value="Submit">
