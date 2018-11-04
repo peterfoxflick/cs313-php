@@ -5,7 +5,7 @@ include '../partials/db.php';
 if(isset($_POST['id'])) {
 
   $savedData = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
-  $data = unserialize($savedData);
+  $data = json_decode($savedData, true);
   for ($i = 0; $i < count($data); $i++) {
     edit_course($data[$i], $i);
   }
