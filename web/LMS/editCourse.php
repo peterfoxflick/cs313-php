@@ -31,12 +31,7 @@ $name = get_course_data($course_id);
       </div>
     </div>
 
-    <button class="btn" onclick="saveData">Save</button>
-    <form action="controller/editCourse.php" method="POST">
-      <input type="hidden" id="savedData" value="" name="newOrder" />
-      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send">
-
-    </form>  </div>
+    <button class="btn" onclick="saveData()">Save</button>
 
 
 
@@ -47,9 +42,16 @@ $name = get_course_data($course_id);
 
 
  function saveData(){
-   var list = document.getElementById('list');
-   var ids = list.querySelectorAll('*[id]');
-   document.getElementById('savedData').value = ids;
+    var list = document.getElementById('list');
+    var ids = list.querySelectorAll('*[id]');
+    console.log(ids);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", yourUrl, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      id: ids
+    }));
  }
 
 

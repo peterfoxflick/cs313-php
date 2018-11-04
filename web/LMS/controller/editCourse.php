@@ -2,9 +2,9 @@
 include '../partials/db.php';
 
 
-if(isset($_POST['savedData'])) {
+if(isset($_POST['id'])) {
 
-  $savedData = filter_var($_POST['savedData'], FILTER_SANITIZE_STRING);
+  $savedData = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
   $data = unserialize($savedData);
   for ($i = 0; $i < count($data); $i++) {
     edit_course($data[$i], $i);
